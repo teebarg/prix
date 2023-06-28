@@ -1,17 +1,18 @@
 import Link from 'next/link';
 
 import GitHubIcon from 'components/icons/github';
-import LogoIcon from 'components/icons/logo';
+// import LogoIcon from 'components/icons/logo';
 import VercelIcon from 'components/icons/vercel';
-import { getMenu } from 'lib/shopify';
-import { Menu } from 'lib/shopify/types';
+// import { getMenu } from 'lib/shopify';
+// import { Menu } from 'lib/shopify/types';
 
 const { SITE_NAME } = process.env;
 
 export default async function Footer() {
   const currentYear = new Date().getFullYear();
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '');
-  const menu = await getMenu('next-js-frontend-footer-menu');
+  // const menu = await getMenu('next-js-frontend-footer-menu');
+  const menu = {};
 
   return (
     <footer className="border-t border-gray-700 bg-white text-black dark:bg-black dark:text-white">
@@ -20,7 +21,8 @@ export default async function Footer() {
           <div className="col-span-1 lg:col-span-3">
             <a className="flex flex-initial items-center font-bold md:mr-24" href="/">
               <span className="mr-2">
-                <LogoIcon className="h-8" />
+                Home
+                {/* <LogoIcon className="h-8" /> */}
               </span>
               <span>{SITE_NAME}</span>
             </a>

@@ -7,3 +7,39 @@
     clip-path: inset(0.6px);
   }
 }
+
+
+.product-canvas {
+  width: 100%;
+  padding: 0 4px;
+  display: inline-block;
+  position: relative;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 0px;
+  background: #fff;
+}
+
+.product-img {
+  height: 200px;
+  margin: auto;
+  padding: 0.4rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.p-line-camp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full px-2.5 py-1 text-[8px] font-medium ring-1 ring-inset
+}
+
+.home-category {
+  background-image: linear-gradient(to right, #BE7C04, #FFBB3F, #FFEDCC, #FFFFFF);
+}

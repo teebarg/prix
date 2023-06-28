@@ -3,14 +3,14 @@ import { Suspense } from 'react';
 
 import Cart from 'components/cart';
 import CartIcon from 'components/icons/cart';
-import LogoIcon from 'components/icons/logo';
-import { getMenu } from 'lib/shopify';
+// import LogoIcon from 'components/icons/logo';
 import { Menu } from 'lib/shopify/types';
 import MobileMenu from './mobile-menu';
 import Search from './search';
 
 export default async function Navbar() {
-  const menu = await getMenu('next-js-frontend-header-menu');
+  // const menu = await getMenu('next-js-frontend-header-menu');
+  const menu = {};
 
   return (
     <nav className="relative flex items-center justify-between bg-white p-4 dark:bg-black lg:px-6">
@@ -20,7 +20,8 @@ export default async function Navbar() {
       <div className="flex justify-self-center md:w-1/3 md:justify-self-start">
         <div className="md:mr-4">
           <Link href="/" aria-label="Go back home">
-            <LogoIcon className="h-8 transition-transform hover:scale-110" />
+            Home
+            {/* <LogoIcon className="h-8 transition-transform hover:scale-110" /> */}
           </Link>
         </div>
         {menu.length ? (
