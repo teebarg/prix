@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
+import { AddToCart } from 'components/cart/add-to-cart';
 import Grid from 'components/grid';
 import Footer from 'components/layout/footer';
 import ProductGridItems from 'components/layout/product-grid-items';
-import { AddToCart } from 'components/cart/add-to-cart';
 import { Gallery } from 'components/product/gallery';
 import { VariantSelector } from 'components/product/variant-selector';
 import Prose from 'components/prose';
@@ -37,19 +37,19 @@ export async function generateMetadata({
         index: hide,
         follow: hide
       }
-    },
-    openGraph: url
-      ? {
-          images: [
-            {
-              url,
-              width,
-              height,
-              alt
-            }
-          ]
-        }
-      : null
+    }
+    // openGraph: url
+    //   ? {
+    //       images: [
+    //         {
+    //           url,
+    //           width,
+    //           height,
+    //           alt
+    //         }
+    //       ]
+    //     }
+    //   : null
   };
 }
 
