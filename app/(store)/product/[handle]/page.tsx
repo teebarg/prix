@@ -4,6 +4,8 @@ import { buildUrl, getCart } from 'lib/api';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
+export const runtime = 'edge';
+
 async function getProduct(sku: string) {
   const res = await fetch(buildUrl(`/product/url/${sku}`));
 
