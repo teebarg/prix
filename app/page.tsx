@@ -1,10 +1,8 @@
 import { Carousel } from 'components/carousel';
-// import { ThreeItemGrid } from 'components/grid/three-items';
-// import { Categories } from "components/home/categories";
 import { HomeFooter } from 'components/home/footer';
 import { HomeHeader } from 'components/home/header';
 import { HomeProducts } from 'components/home/home-products';
-// import Footer from 'components/layout/footer';
+import Footer from 'components/layout/footer';
 import { Suspense } from 'react';
 
 export const runtime = 'edge';
@@ -26,7 +24,6 @@ export const metadata = {
 export default async function HomePage() {
   return (
     <>
-      {/* <Categories /> */}
       <Suspense>
         <div className="px-12">
           <Suspense>
@@ -41,10 +38,8 @@ export default async function HomePage() {
           <Suspense>
             <HomeFooter />
           </Suspense>
-          {/* <Suspense>
-                    <Footer />
-                </Suspense> */}
         </div>
+        <Footer />
       </Suspense>
     </>
   );

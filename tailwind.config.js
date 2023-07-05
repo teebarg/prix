@@ -20,7 +20,8 @@ module.exports = {
         dark: '#111111',
         light: '#FAFAFA',
         violetDark: '#4c2889',
-        primary: '#260'
+        primary: '#260',
+        secondary: '#ffbb3f'
       },
       keyframes: {
         fadeIn: {

@@ -1,24 +1,12 @@
-// import { createCart, getCart } from 'lib/shopify';
-// import { cookies } from 'next/headers';
-// import CartModal from './modal';
+import { getCart } from 'lib/api';
+import CartDetails from './cart-details';
 
 export default async function Cart() {
-  // const cartId = cookies().get('cartId')?.value;
-  // let cartIdUpdated = false;
-  // let cart;
+  const {
+    data: { cart }
+  } = await getCart();
 
-  // if (cartId) {
-  //   cart = await getCart(cartId);
-  // }
+  if (!cart || !cart?.cart_items) return <p>No data</p>;
 
-  // // If the `cartId` from the cookie is not set or the cart is empty
-  // // (old carts becomes `null` when you checkout), then get a new `cartId`
-  // //  and re-fetch the cart.
-  // if (!cartId || !cart) {
-  //   cart = await createCart();
-  //   cartIdUpdated = true;
-  // }
-
-  // return <CartModal cart={cart} cartIdUpdated={cartIdUpdated} />;
-  return (<div>This will be Cart</div>);
+  return <CartDetails cart={cart} />;
 }

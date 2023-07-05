@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google';
+import { Outfit } from 'next/font/google';
 import { ReactNode, Suspense } from 'react';
 import './globals.css';
 
@@ -23,16 +23,17 @@ export const metadata = {
     })
 };
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter'
-});
+// const inter = Inter({
+//     subsets: ["latin"],
+//     display: "swap",
+//     variable: "--font-inter",
+// });
+const outfit = Outfit({ subsets: ['latin'] });
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="bg-[#e4e4e4] text-black selection:bg-teal-300 darkk:bg-black darkk:text-white darkk:selection:bg-fuchsia-600 darkk:selection:text-white">
+    <html lang="en" className={outfit.className}>
+      <body className="darkk:bg-black darkk:text-white darkk:selection:bg-fuchsia-600 darkk:selection:text-white bg-[#e4e4e4] text-black selection:bg-teal-300">
         <Suspense>
           <main>{children}</main>
         </Suspense>
