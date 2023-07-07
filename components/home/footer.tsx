@@ -76,7 +76,7 @@ export async function HomeFooter() {
   if (!brands?.length) return null;
 
   return (
-    <div className="-mx-12 mt-8 bg-white px-4 pt-4">
+    <div className="mt-8 bg-white px-4 pt-4">
       <h2 className="text-center font-semibold">TRUSTED PARTNERS</h2>
       <div className="mt-4 p-4">
         <div className="flex flex-wrap justify-center gap-8">

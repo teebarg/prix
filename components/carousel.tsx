@@ -29,10 +29,10 @@ export async function Carousel() {
 
   const mainBanners = banners?.LandingPageBanner?.[0]?.ads;
 
-  if (!products?.length) return null;
+  if (!products?.length) return <CarouselLoading />;
 
   return (
-    <>
+    <div>
       <div className="flex h-[450px] gap-4">
         <div className="relative flex-1">
           <Image
@@ -87,6 +87,27 @@ export async function Carousel() {
           ))}
         </div>
       </div>
-    </>
+    </div>
+  );
+}
+
+export async function CarouselLoading() {
+  return (
+    <div className="animate-pulse">
+      <div className="flex h-[450px] gap-4">
+        <div className="relative h-full flex-1 bg-slate-300"></div>
+        <div className="flex h-full w-1/4 flex-col gap-4">
+          <div className="relative flex-1 bg-slate-300"></div>
+          <div className="relative h-1/3 bg-slate-300"></div>
+        </div>
+      </div>
+      <div className="relative mt-6 w-full overflow-hidden bg-white">
+        <div className="flex animate-carousel gap-2">
+          {[1, 1, 1, 1, 1, 1].map((_, i) => (
+            <div key={i} className="h-60 w-1/3 flex-none bg-slate-300"></div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
