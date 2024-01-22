@@ -24,7 +24,7 @@ jobs:
           version: 7
       - name: Cache node_modules
         id: node-modules-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: '**/node_modules'
           key: node-modules-cache-${{ hashFiles('**/pnpm-lock.yaml') }}
@@ -34,7 +34,7 @@ jobs:
       - name: Get playwright version
         run: echo "PLAYWRIGHT_VERSION=$(node -e "console.log(require('./node_modules/@playwright/test/package.json').version)")" >> $GITHUB_ENV
       - name: Cache playwright
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: playwright-cache
         with:
           path: '~/.cache/ms-playwright'
